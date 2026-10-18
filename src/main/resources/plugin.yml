@@ -1,0 +1,21 @@
+name: CursorUI
+version: '${version}'
+main: dev.cursorui.CursorUIPlugin
+api-version: '1.20'
+description: Cursor-driven GUIs and HUD for Paper servers
+softdepend: [PlaceholderAPI]
+commands:
+  cursorui:
+    description: CursorUI main command
+    aliases: [cui]
+    usage: /<command> <open|close|list|reload|hud>
+permissions:
+  cursorui.admin:
+    description: Reload, open menus for other players, manage everything
+    default: op
+  cursorui.open:
+    description: Open menus for yourself via command
+    default: true
+  cursorui.hud:
+    description: Toggle your own HUD
+    default: true

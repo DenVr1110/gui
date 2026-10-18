@@ -1,0 +1,30 @@
+# ---------------------------------------------------------------
+# HUD config. Elements are shown to every player (unless they
+# toggled it off with /cui hud) and refreshed every update-ticks.
+#
+# type: bossbar   -> shown at the top of the screen
+# type: actionbar -> shown above the hotbar (all actionbar elements are joined)
+#
+# Text supports MiniMessage, {placeholders} and PlaceholderAPI %placeholders%.
+# Built-in: {player} {displayname} {health} {max_health} {food} {level}
+#           {world} {x} {y} {z} {ping} {online} {max_players} {tps}
+# ---------------------------------------------------------------
+enabled: true
+update-ticks: 10
+separator: "  "
+
+elements:
+  health:
+    type: bossbar
+    text: "<red>❤ <white>{health}<gray>/<white>{max_health}"
+    progress: "{health}/{max_health}"
+    color: RED
+    overlay: PROGRESS
+    permission: ""
+    worlds: []
+
+  info:
+    type: actionbar
+    text: "<gray>Ping: <green>{ping}ms <dark_gray>| <gray>TPS: <green>{tps} <dark_gray>| <gray>{world}"
+    permission: ""
+    worlds: []

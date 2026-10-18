@@ -1,0 +1,120 @@
+# ---------------------------------------------------------------
+# Example cursor menu. Open it with:  /cui open example
+#
+# Coordinates are in "menu pixels": (0,0) is the center, x goes right,
+# y goes UP. 100 pixels = 1 block (see pixels-per-block).
+# Close the menu with Shift (sneak), F (swap hands) or a [close] action.
+# ---------------------------------------------------------------
+permission: ""
+distance: 3.0            # blocks in front of the player
+pixels-per-block: 100
+width: 420
+height: 260
+y-offset: 0.0            # blocks
+close-on-sneak: true
+close-on-swap: true
+invulnerable: true       # player cannot take damage while the menu is open
+refresh-ticks: 10        # how often texts/bars are refreshed (0 = never)
+
+elements:
+  background:
+    type: panel
+    x: 0
+    y: 0
+    width: 420
+    height: 260
+    layer: 0
+    material: BLACK_CONCRETE
+
+  title:
+    type: label
+    x: 0
+    y: 100
+    layer: 2
+    text-scale: 1.0
+    text: "<gradient:aqua:blue><bold>CursorUI Demo"
+
+  greeting:
+    type: label
+    x: 0
+    y: 68
+    layer: 2
+    text: "<gray>Hello, <white>{player}<gray>! Ping: <green>{ping}ms"
+
+  name-input:
+    type: input
+    x: 0
+    y: 30
+    width: 300
+    height: 30
+    layer: 1
+    material: GRAY_CONCRETE
+    hover-material: LIGHT_GRAY_CONCRETE
+    text: "<gray>Click and type your name..."
+    value-text: "<white>Name: <aqua>{value}"
+    max-length: 24
+    submit-actions:
+      - "[message] <green>Nice to meet you, <white>{input}<green>!"
+      - "[sound] entity.experience_orb.pickup"
+
+  left-right:
+    type: button
+    x: -105
+    y: -15
+    width: 190
+    height: 34
+    layer: 1
+    material: BLUE_CONCRETE
+    hover-material: LIGHT_BLUE_CONCRETE
+    text: "<white>Left / Right click"
+    hover-text: "<yellow>Left / Right click"
+    left-actions:
+      - "[message] <green>You used the <white>left</white> button!"
+    right-actions:
+      - "[message] <gold>You used the <white>right</white> button!"
+
+  spawn:
+    type: button
+    x: 105
+    y: -15
+    width: 190
+    height: 34
+    layer: 1
+    material: GREEN_CONCRETE
+    hover-material: LIME_CONCRETE
+    text: "<white>Go to spawn"
+    actions:
+      - "[close]"
+      - "[player] spawn"
+
+  health-bar:
+    type: bar
+    x: 0
+    y: -62
+    width: 300
+    height: 14
+    layer: 1
+    material: GRAY_CONCRETE
+    fill-material: RED_CONCRETE
+    value: "{health}/{max_health}"
+
+  health-label:
+    type: label
+    x: 0
+    y: -62
+    layer: 3
+    text-scale: 0.45
+    text: "<white>{health} / {max_health} HP"
+
+  close:
+    type: button
+    x: 0
+    y: -105
+    width: 120
+    height: 28
+    layer: 1
+    material: RED_CONCRETE
+    hover-material: ORANGE_CONCRETE
+    text: "<white>Close"
+    actions:
+      - "[close]"

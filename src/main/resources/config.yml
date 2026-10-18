@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------
+# CursorUI main config
+# ---------------------------------------------------------------
+
+messages:
+  prefix: "<gray>[<aqua>CursorUI</aqua>]</gray> "
+  help: "<gray>/cui open <menu> [player] | close [player] | list | reload | hud [on|off|toggle] [player]"
+  no-permission: "<red>You don't have permission."
+  unknown-menu: "<red>Unknown menu: <white>{menu}"
+  player-not-found: "<red>Player not found."
+  console-needs-player: "<red>Specify a player."
+  opened: "<green>Opened menu <white>{menu}</white> for <white>{player}</white>."
+  closed: "<green>Closed menu for <white>{player}</white>."
+  list: "<gray>Menus: <white>{menus}"
+  reloaded: "<green>Reloaded config, menus and HUD."
+  hud-on: "<green>HUD enabled for <white>{player}</white>."
+  hud-off: "<yellow>HUD disabled for <white>{player}</white>."
+  input-prompt: "<yellow>Type your answer in chat <gray>(or type <white>cancel</white>)"
+  input-cancelled: "<gray>Input cancelled."
+
+# Calibration for how the Display entities are drawn.
+# If something looks off in-game, these are the knobs to turn.
+render:
+  # Extra yaw added to all display entities (use 180 if the whole menu looks mirrored/invisible).
+  yaw-offset: 0
+  # Vertical shift for text, in "text pixels" (1 text pixel = 0.025 blocks at scale 1).
+  text-y-offset: -4.5
+  # Distance in blocks between layers (prevents z-fighting).
+  layer-step: 0.006
+  # Rotate item displays 180 degrees around Y (use if items look mirrored).
+  item-flip: false
+
+cursor:
+  type: block            # block | item
+  material: WHITE_CONCRETE
+  size: 5                # menu pixels
+  # for type: item
+  item-material: ARROW
+  custom-model-data: 0
+  item-offset-x: 0       # menu pixels (use to align the tip of your cursor texture)
+  item-offset-y: 0
+
+sounds:
+  hover: "block.note_block.hat"
+  click: "ui.button.click"
