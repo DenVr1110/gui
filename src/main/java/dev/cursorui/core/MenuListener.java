@@ -1,6 +1,6 @@
 package dev.cursorui.core;
 
-import com.destroystokyo.paper.event.player.PrePlayerAttackEntityEvent;
+import io.papermc.paper.event.player.PrePlayerAttackEntityEvent;
 import dev.cursorui.CursorUIPlugin;
 import dev.cursorui.api.ClickType;
 import dev.cursorui.hud.HudManager;
@@ -17,7 +17,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
-import org.bukkit.event.player.PlayerDeathEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
